@@ -1,0 +1,52 @@
+Methods & Workflow
+
+1. Data Acquisition
+
+Data downloaded from TCGA using TCGAbiolinks.
+
+Focused on Transcriptome Profiling → Gene Expression Quantification → STAR - Counts.
+
+2. Preprocessing
+
+Filtered for tumor (TP) and normal (NT) samples.
+
+Constructed metadata for sample grouping.
+
+3. Differential Expression (DE) Analysis
+
+Performed with DESeq2.
+
+Log2 fold change shrinkage applied (ashr).
+
+Annotated Ensembl IDs → HGNC gene symbols (org.Hs.eg.db).
+
+4. Visualization
+
+Volcano plot: highlights significant DEGs.
+
+Heatmap: top 30 most significant DEGs.
+
+PCA & sample clustering: to check group separation (QC).
+
+5. Functional Enrichment Analysis
+
+GO (Gene Ontology) enrichment with clusterProfiler.
+
+Pathway analysis (KEGG / Reactome).
+
+6. (Optional) Survival Analysis
+
+Clinical survival data merged from TCGA.
+
+Kaplan-Meier plots for selected genes.
+
+
+#Key Results
+
+Volcano Plot: Clear separation of up- and down-regulated genes.
+
+Heatmap: Distinct clustering of Tumor vs Normal samples.
+
+Enrichment: Significant pathways involved in breast cancer biology (e.g., cell cycle, immune signaling).
+
+Survival (optional): Expression of specific DEGs correlated with overall survival.
